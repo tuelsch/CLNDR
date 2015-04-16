@@ -114,6 +114,10 @@
   function Clndr( element, options ) {
     this.element = element;
 
+    // If a moment object is provided in the options,
+    // use this instead of the default one injected by UMD
+    if (options.moment) moment = options.moment;
+
     // merge the default options with user-provided options
     this.options = $.extend(true, {}, defaults, options);
 
